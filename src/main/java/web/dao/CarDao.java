@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface CarDao {
     List<Car> allCars();
-    List<Car> showSpecifiedCarsValue(int value);
+    List<Car> getCars(int value);
 }

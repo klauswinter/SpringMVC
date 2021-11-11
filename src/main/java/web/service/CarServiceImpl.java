@@ -19,7 +19,7 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<Car> showSpecifiedCarsValue(int value) {
-        return carDao.showSpecifiedCarsValue(value);
+    public List<Car> getCars(int value) {
+        return carDao.getCars(value);
     }
 }

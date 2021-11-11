@@ -8,7 +8,7 @@ import java.util.List;
 public class CarDaoImpl implements CarDao {
 
     private List<Car> cars = new ArrayList<>();
-    private List<Car> showSpecifiedCarsValue = new ArrayList<>();
+    private List<Car> getCars = new ArrayList<>();
 
     {
         Car car1 = new Car("TESLA", "X", 2020);
@@ -30,13 +30,17 @@ public class CarDaoImpl implements CarDao {
     }
 
     @Override
-    public List<Car> showSpecifiedCarsValue(int value) {
-        showSpecifiedCarsValue.clear();
+    public List<Car> getCars(int value) {
+        getCars.clear();
 
-        for (int i = 0; i < value; i++) {
-            showSpecifiedCarsValue.add(cars.get(i));
+        if (value >= 5) {
+            return cars;
+        } else {
+            for (int i = 0; i < value; i++) {
+                getCars.add(cars.get(i));
+            }
         }
 
-        return showSpecifiedCarsValue;
+        return getCars;
     }
 }
