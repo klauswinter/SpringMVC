@@ -14,12 +14,11 @@ public class CarServiceImpl implements CarService {
     CarDaoImpl carDao = new CarDaoImpl();
 
     @Override
-    public List<Car> allCars() {
-        return carDao.allCars();
-    }
-
-    @Override
     public List<Car> getCars(int value) {
-        return carDao.getCars(value);
+        if (value >= 5) {
+            return carDao.allCars();
+        } else {
+            return carDao.getCars(value);
+        }
     }
 }

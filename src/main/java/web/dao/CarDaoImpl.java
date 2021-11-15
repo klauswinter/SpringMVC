@@ -33,12 +33,8 @@ public class CarDaoImpl implements CarDao {
     public List<Car> getCars(int value) {
         getCars.clear();
 
-        if (value >= 5) {
-            return cars;
-        } else {
-            for (int i = 0; i < value; i++) {
-                getCars.add(cars.get(i));
-            }
+        for (int i = 0; i < value; i++) {
+            getCars.add(cars.get(i));
         }
 
         return getCars;
